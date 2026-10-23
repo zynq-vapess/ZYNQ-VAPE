@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración para redes sociales (Open Graph) -->
-<meta property="og:title" content="ZYNQVAPE | Tu Tienda de Vapeo" />
-<meta property="og:description" content="Encuentra los mejores vapes al mejor precio" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://github.io" />
-<meta property="og:image" content="https://github.ioimagen-compartir.jpg" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zynq Vape | Tienda Urbana Premium</title>
+    
+    <!-- Configuración para redes sociales (Open Graph) -->
+    <meta property="og:title" content="ZYNQVAPE | Tu Tienda de Vapeo" />
+    <meta property="og:description" content="Encuentra los mejores vapes al mejor precio y sabores exclusivos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="imagen-compartir.jpg" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --bg-color: #0b0b14;
@@ -118,81 +119,62 @@
             font-weight: 800;
         }
 
-        /* HERO SECTION ADAPTABLE */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 30px 5%;
-            gap: 30px;
+        /* BANNER HORIZONTAL GRANDE (PRIMERO EN CARGAR) */
+        .hero-banner-section {
+            padding: 25px 5% 15px;
+            text-align: center;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            font-style: italic;
-            text-transform: uppercase;
-            line-height: 0.95;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
-            margin: 12px 0;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid var(--neon-yellow);
-            color: var(--neon-yellow);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 0 10px rgba(255, 238, 0, 0.2);
-        }
-
-        .hero-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .cta-btn {
-            background: linear-gradient(135deg, var(--neon-pink), #ff55aa);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
-            transition: 0.3s;
-        }
-
-        .hero-banner-placeholder {
+        .hero-banner-card {
             width: 100%;
-            height: 260px;
-            border: 2px dashed rgba(0, 240, 255, 0.3);
-            border-radius: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #121225, #0b0b18);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            background: rgba(0, 240, 255, 0.02);
-            gap: 10px;
-            text-align: center;
-            padding: 20px;
+            gap: 15px;
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+
+        .hero-banner-texts {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hero-main-title {
+            font-size: 2.3rem;
+            font-weight: 900;
+            font-style: italic;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff, var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        .hero-sub-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            font-style: italic;
+            color: var(--neon-yellow);
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 238, 0, 0.4);
         }
 
         /* CATALOG SECTION */
-        .catalog-section { padding: 30px 5%; }
+        .catalog-section { padding: 20px 5% 50px; }
 
         .catalog-header {
             display: flex;
@@ -250,13 +232,13 @@
         /* GRID RESPONSIVO DE PRODUCTOS */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 22px;
         }
 
         .product-card {
             background: var(--card-bg);
-            border: 1px solid rgba(0, 240, 255, 0.2);
+            border: 1px solid rgba(0, 240, 255, 0.25);
             border-radius: 18px;
             padding: 16px;
             position: relative;
@@ -270,7 +252,7 @@
         .product-card:hover {
             transform: translateY(-5px);
             border-color: var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
         }
 
         .card-top-tag {
@@ -278,8 +260,16 @@
             font-weight: 800;
             text-transform: uppercase;
             color: var(--neon-cyan);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             letter-spacing: 1px;
+        }
+
+        .card-model-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
         .card-img-container {
@@ -290,7 +280,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px 0;
+            margin: 8px 0;
             overflow: hidden;
         }
 
@@ -308,7 +298,7 @@
 
         .product-card h3 {
             font-size: 1rem;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--neon-cyan);
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -389,7 +379,7 @@
         .btn-clear { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 10px; border-radius: 10px; cursor: pointer; flex: 1; font-size: 0.85rem; }
         .btn-apply { background: var(--neon-cyan); border: none; color: var(--bg-color); padding: 10px; border-radius: 10px; cursor: pointer; font-weight: 800; flex: 2; font-size: 0.85rem; }
 
-        /* MODAL RESPONSIVO */
+        /* MODAL PROFESIONAL */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 2000;
@@ -409,16 +399,33 @@
         .modal-left { background: linear-gradient(135deg, #181830, #0c0c1a); padding: 25px; display: flex; align-items: center; justify-content: center; min-height: 220px; }
         .modal-right { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
         
-        .modal-badges { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .modal-badges { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
         .badge-tag { background: rgba(0, 240, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 3px 10px; border-radius: 20px; font-size: 9px; font-weight: 800; }
         .badge-stock { background: rgba(0, 255, 102, 0.1); border: 1px solid var(--neon-green); color: var(--neon-green); padding: 3px 10px; border-radius: 20px; font-size: 9px; font-weight: 800; }
         
-        .modal-right h2 { font-size: 1.5rem; font-weight: 900; color: var(--neon-cyan); margin-bottom: 4px; }
-        .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; text-transform: uppercase; }
-        .modal-desc { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 10px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
+        .modal-right h2 { font-size: 1.4rem; font-weight: 900; color: var(--neon-cyan); margin-bottom: 2px; }
+        .modal-subtitle { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; font-weight: 700; }
+        
+        .modal-specs-list {
+            list-style: none;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            border-radius: 10px;
+        }
+        .modal-specs-list li { display: flex; align-items: center; gap: 8px; }
+        .modal-specs-list li i { color: var(--neon-cyan); font-size: 10px; }
+
+        .modal-desc { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 12px; border-radius: 10px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
         
         .modal-price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .modal-price strong { font-size: 1.5rem; font-weight: 900; color: white; }
+        .modal-price strong { font-size: 1.4rem; font-weight: 900; color: white; }
         
         .qty-selector { display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; }
         .qty-btn { background: none; border: none; color: white; width: 32px; height: 32px; cursor: pointer; font-weight: bold; }
@@ -428,11 +435,10 @@
 
         .loading-text { grid-column: 1/-1; text-align: center; padding: 40px; color: var(--neon-cyan); font-weight: bold; font-size: 1.1rem; }
 
-        /* ADAPTACIÓN MÓVIL (PANTALLAS PEQUEÑAS) */
+        /* ADAPTACIÓN MÓVIL */
         @media(max-width: 768px) {
-            .hero { grid-template-columns: 1fr; text-align: center; gap: 20px; padding: 20px 5%; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .hero-banner-placeholder { height: 200px; }
+            .hero-main-title { font-size: 1.7rem; }
+            .hero-sub-title { font-size: 1.1rem; }
             .modal-card { grid-template-columns: 1fr; max-width: 100%; }
             .catalog-header { flex-direction: column; align-items: stretch; }
             .filter-tabs { justify-content: center; }
@@ -455,22 +461,14 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fa-solid fa-bolt"></i> Original Street Vapes
-            </div>
-            <h1>Zynq Vape</h1>
-            <p>Tu tienda urbana de vapes premium y sabores exclusivos. Potencia, estilo y la mejor vibra en cada calada.</p>
-            <button class="cta-btn" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">
-                Ver Catálogo
-            </button>
-        </div>
-        <div class="hero-image">
-            <div class="hero-banner-placeholder">
-                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: var(--neon-cyan);"></i>
-                <span>Espacio para Banner Principal / Mascota</span>
+    <!-- BANNER HORIZONTAL GRANDE (PRIMERO EN CARGAR) -->
+    <section class="hero-banner-section">
+        <div class="hero-banner-card">
+            <!-- 📌 AQUÍ PEGAS EL LINK DE TU IMAGEN HORIZONTAL -->
+            <img src="https://i.postimg.cc/0y1xkQDs/image.png" alt="Zynq Vape Banner" class="hero-banner-img" onerror="this.style.display='none'">
+            <div class="hero-banner-texts">
+                <h1 class="hero-main-title">Sabores que te hacen volar</h1>
+                <div class="hero-sub-title">¡100% Originales Certificados!</div>
             </div>
         </div>
     </section>
@@ -534,7 +532,7 @@
         </div>
     </div>
 
-    <!-- MODAL DETALLE -->
+    <!-- MODAL PROFESIONAL -->
     <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -546,8 +544,16 @@
                         <span class="badge-stock" id="modal-estado">En Stock</span>
                     </div>
                     <h2 id="modal-title">--</h2>
-                    <div class="modal-subtitle" id="modal-puffs">--</div>
-                    <div class="modal-desc" id="modal-desc">--</div>
+                    <div class="modal-subtitle" id="modal-nombre-modelo">--</div>
+                    
+                    <!-- Especificaciones técnicas detalladas en el modal -->
+                    <ul class="modal-specs-list">
+                        <li><i class="fa-solid fa-wind"></i> <span id="modal-puffs">--</span></li>
+                        <li><i class="fa-solid fa-droplet"></i> <span id="modal-tipo">--</span></li>
+                        <li><i class="fa-solid fa-circle-dot"></i> <span id="modal-nicotina">--</span></li>
+                    </ul>
+
+                    <div class="modal-desc" id="modal-desc">Sin descripción adicional.</div>
                 </div>
                 <div>
                     <div class="modal-price-row">
@@ -569,7 +575,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE CONEXIÓN Y ADAPTABILIDAD -->
+    <!-- SCRIPT DE CONEXIÓN Y LÓGICA -->
     <script>
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwI2WRZra570-HCtcRD4kDns18qbOWI5NWT2U3VXnlsUOrS2VeA3iyOlEQdgNbspWwJ/exec';
 
@@ -593,10 +599,10 @@
 
                     return {
                         id: row['ID'] || `ID_${idx + 1}`,
-                        nombre: row['Nombre'] || 'Sin Nombre',
+                        nombre: row['Nombre'] || 'Sin Nombre', // Modelo / Nombre comercial
                         marca: row['Marca'] || 'Genérico',
                         tipo: row['Tipo'] || 'Vapes Desechables',
-                        sabor: row['Sabor'] || '',
+                        sabor: row['Sabor'] || 'Sabor Exclusivo',
                         puffs: row['Puffs'] || '',
                         nicotina: row['%Nicotina'] || row['Nicotina (%)'] || row['% Nicotina'] || 'N/A',
                         precio: cleanPrecio,
@@ -628,14 +634,16 @@
                 return;
             }
 
+            // Tarjetas con Marca arriba, Sabor como título principal y Modelo arriba del título
             grid.innerHTML = lista.map(p => `
                 <div class="product-card" onclick="openModal('${p.id}')">
                     <div>
                         <div class="card-top-tag">${p.marca}</div>
+                        <div class="card-model-name">${p.nombre}</div>
                         <div class="card-img-container">
-                            ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}">` : `<div class="no-img-text"><i class="fa-solid fa-image" style="font-size: 20px; color: var(--neon-cyan); margin-bottom: 5px; display:block;"></i>Sin Imagen</div>`}
+                            ${p.imagen ? `<img src="${p.imagen}" alt="${p.sabor}">` : `<div class="no-img-text"><i class="fa-solid fa-image" style="font-size: 20px; color: var(--neon-cyan); margin-bottom: 5px; display:block;"></i>Sin Imagen</div>`}
                         </div>
-                        <h3>${p.nombre}</h3>
+                        <h3>${p.sabor}</h3>
                         <ul class="specs-list">
                             <li><i class="fa-solid fa-wind"></i> ${p.puffs}</li>
                             <li><i class="fa-solid fa-droplet"></i> ${p.tipo}</li>
@@ -727,15 +735,21 @@
             
             const imgContainer = document.getElementById("modal-img-container");
             if (currentProduct.imagen) {
-                imgContainer.innerHTML = `<img src="${currentProduct.imagen}" alt="${currentProduct.nombre}" style="max-height: 220px; object-fit: contain;">`;
+                imgContainer.innerHTML = `<img src="${currentProduct.imagen}" alt="${currentProduct.sabor}" style="max-height: 250px; object-fit: contain;">`;
             } else {
                 imgContainer.innerHTML = `<div style="text-align: center; color: var(--text-muted);"><i class="fa-solid fa-image" style="font-size: 35px; color: var(--neon-cyan); margin-bottom: 8px; display:block;"></i>Sin Imagen</div>`;
             }
 
             document.getElementById("modal-marca").innerText = currentProduct.marca;
             document.getElementById("modal-estado").innerText = currentProduct.estado;
-            document.getElementById("modal-title").innerText = currentProduct.nombre;
+            document.getElementById("modal-title").innerText = currentProduct.sabor;
+            document.getElementById("modal-nombre-modelo").innerText = currentProduct.nombre;
+            
+            // Especificaciones completas en el modal
             document.getElementById("modal-puffs").innerText = currentProduct.puffs;
+            document.getElementById("modal-tipo").innerText = currentProduct.tipo;
+            document.getElementById("modal-nicotina").innerText = currentProduct.nicotina;
+
             document.getElementById("modal-desc").innerText = currentProduct.descripcion || 'Sin descripción adicional.';
             document.getElementById("modal-price").innerText = `$${(currentProduct.precio * currentQty).toLocaleString('es-CO')} COP`;
 
@@ -758,8 +772,8 @@
         }
 
         function sendWhatsAppOrder() {
-            const telefono = "573134487943"; // Número de WhatsApp configurado
-            const mensaje = `Hola Zynq Vape 👋 Quiero pedir:%0A%0A*${currentProduct.nombre}*%0AMarca: ${currentProduct.marca}%0ACantidad: ${currentQty}%0APrecio Total: $${(currentProduct.precio * currentQty).toLocaleString('es-CO')} COP%0A%0A¡Quedo atento al domicilio!`;
+            const telefono = "573134487943"; 
+            const mensaje = `Hola Zynq Vape 👋 Quiero pedir:%0A%0A*${currentProduct.nombre} - ${currentProduct.sabor}*%0AMarca: ${currentProduct.marca}%0ACantidad: ${currentQty}%0APrecio Total: $${(currentProduct.precio * currentQty).toLocaleString('es-CO')} COP%0A%0A¡Quedo atento al domicilio!`;
             window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
         }
     </script>
